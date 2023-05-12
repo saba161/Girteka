@@ -176,3 +176,6 @@
 /Users/sabakoghuashvili/Desktop/Girteka.AggregationApp/Girteka/Girteka.AggregationApp/obj/Debug/net7.0/Girteka.AggregationApp.pdb
 /Users/sabakoghuashvili/Desktop/Girteka.AggregationApp/Girteka/Girteka.AggregationApp/obj/Debug/net7.0/Girteka.AggregationApp.genruntimeconfig.cache
 /Users/sabakoghuashvili/Desktop/Girteka.AggregationApp/Girteka/Girteka.AggregationApp/obj/Debug/net7.0/ref/Girteka.AggregationApp.dll
+/Users/sabakoghuashvili/Desktop/Girteka.AggregationApp/Girteka/Girteka.AggregationApp/bin/Debug/net7.0/Quartz.dll
+/Users/sabakoghuashvili/Desktop/Girteka.AggregationApp/Girteka/Girteka.AggregationApp/bin/Debug/net7.0/Quartz.Extensions.DependencyInjection.dll
+/Users/sabakoghuashvili/Desktop/Girteka.AggregationApp/Girteka/Girteka.AggregationApp/bin/Debug/net7.0/Quartz.Extensions.Hosting.dll

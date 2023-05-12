@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "8itgwR0Jqc28UpuexBsc1mrg/g/27nTAIaciA3+Kz3NiZxKXpyQc9ChruDXx9x1kbDtZYc0bFDITPuBPSZT5Tw==",
+  "dgSpecHash": "Jel9y41cRcY0fvJHUvQmeK24TTLFAKse6Xnowr8fgdMqS5iacN05Sgr+8VHXurucDrNw/HSHm83Ze/HwKPjJLg==",
   "success": true,
   "projectFilePath": "/Users/sabakoghuashvili/Desktop/Girteka.AggregationApp/Girteka/Girteka.AggregationApp/Girteka.AggregationApp.csproj",
   "expectedPackageFiles": [
@@ -27,6 +27,8 @@
     "/Users/sabakoghuashvili/.nuget/packages/microsoft.extensions.dependencyinjection/8.0.0-preview.3.23174.8/microsoft.extensions.dependencyinjection.8.0.0-preview.3.23174.8.nupkg.sha512",
     "/Users/sabakoghuashvili/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/8.0.0-preview.3.23174.8/microsoft.extensions.dependencyinjection.abstractions.8.0.0-preview.3.23174.8.nupkg.sha512",
     "/Users/sabakoghuashvili/.nuget/packages/microsoft.extensions.dependencymodel/8.0.0-preview.3.23174.8/microsoft.extensions.dependencymodel.8.0.0-preview.3.23174.8.nupkg.sha512",
+    "/Users/sabakoghuashvili/.nuget/packages/microsoft.extensions.fileproviders.abstractions/6.0.0/microsoft.extensions.fileproviders.abstractions.6.0.0.nupkg.sha512",
+    "/Users/sabakoghuashvili/.nuget/packages/microsoft.extensions.hosting.abstractions/6.0.0/microsoft.extensions.hosting.abstractions.6.0.0.nupkg.sha512",
     "/Users/sabakoghuashvili/.nuget/packages/microsoft.extensions.logging/8.0.0-preview.3.23174.8/microsoft.extensions.logging.8.0.0-preview.3.23174.8.nupkg.sha512",
     "/Users/sabakoghuashvili/.nuget/packages/microsoft.extensions.logging.abstractions/8.0.0-preview.3.23174.8/microsoft.extensions.logging.abstractions.8.0.0-preview.3.23174.8.nupkg.sha512",
     "/Users/sabakoghuashvili/.nuget/packages/microsoft.extensions.options/8.0.0-preview.3.23174.8/microsoft.extensions.options.8.0.0-preview.3.23174.8.nupkg.sha512",
@@ -45,6 +47,9 @@
     "/Users/sabakoghuashvili/.nuget/packages/microsoft.sqlserver.server/1.0.0/microsoft.sqlserver.server.1.0.0.nupkg.sha512",
     "/Users/sabakoghuashvili/.nuget/packages/microsoft.win32.systemevents/6.0.0/microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "/Users/sabakoghuashvili/.nuget/packages/mono.texttemplating/2.2.1/mono.texttemplating.2.2.1.nupkg.sha512",
+    "/Users/sabakoghuashvili/.nuget/packages/quartz/3.6.2/quartz.3.6.2.nupkg.sha512",
+    "/Users/sabakoghuashvili/.nuget/packages/quartz.extensions.dependencyinjection/3.6.2/quartz.extensions.dependencyinjection.3.6.2.nupkg.sha512",
+    "/Users/sabakoghuashvili/.nuget/packages/quartz.extensions.hosting/3.6.2/quartz.extensions.hosting.3.6.2.nupkg.sha512",
     "/Users/sabakoghuashvili/.nuget/packages/swashbuckle.aspnetcore/6.4.0/swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
     "/Users/sabakoghuashvili/.nuget/packages/swashbuckle.aspnetcore.swagger/6.4.0/swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
     "/Users/sabakoghuashvili/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.4.0/swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",
