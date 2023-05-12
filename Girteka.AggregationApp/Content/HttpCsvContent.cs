@@ -1,5 +1,3 @@
-using System.Net;
-
 namespace Girteka.AggregationApp.Content;
 
 public class HttpCsvContent : IContent
@@ -11,19 +9,21 @@ public class HttpCsvContent : IContent
         _url = url;
     }
 
-    public async Task<string> GetCsvContent()
+    public async Task<Stream> GetCsvContent(string fileName)
     {
         using (var client = new HttpClient())
         {
-            using (var result = await client.GetAsync(_url))
+            client.Timeout = TimeSpan.FromSeconds(300);
+            var response = await client.GetAsync(_url + fileName);
+
+            if (response.IsSuccessStatusCode)
             {
-                if (result.IsSuccessStatusCode)
-                {
-                    var s = result.Content.ReadAsByteArrayAsync();
-                }
+                return await response.Content.ReadAsStreamAsync();
+            }
+            else
+            {
+                throw new Exception("Failed to download CSV file.");
             }
         }
-
-        return null;
     }
 }
