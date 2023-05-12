@@ -3405,11 +3405,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/sabakoghuashvili/Desktop/Girteka.AggregationApp/Girteka.AggregationApp/Girteka.AggregationApp.csproj",
+      "projectUniqueName": "/Users/sabakoghuashvili/Desktop/Girteka.AggregationApp/Girteka/Girteka.AggregationApp/Girteka.AggregationApp.csproj",
       "projectName": "Girteka.AggregationApp",
-      "projectPath": "/Users/sabakoghuashvili/Desktop/Girteka.AggregationApp/Girteka.AggregationApp/Girteka.AggregationApp.csproj",
+      "projectPath": "/Users/sabakoghuashvili/Desktop/Girteka.AggregationApp/Girteka/Girteka.AggregationApp/Girteka.AggregationApp.csproj",
       "packagesPath": "/Users/sabakoghuashvili/.nuget/packages/",
-      "outputPath": "/Users/sabakoghuashvili/Desktop/Girteka.AggregationApp/Girteka.AggregationApp/obj/",
+      "outputPath": "/Users/sabakoghuashvili/Desktop/Girteka.AggregationApp/Girteka/Girteka.AggregationApp/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/sabakoghuashvili/.nuget/NuGet/NuGet.Config"

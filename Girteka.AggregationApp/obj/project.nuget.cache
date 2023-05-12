@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "z6SMMYFR6npjPYogZeJDSsF7mSyD+uLN0zkzMxAJSjIynDJ5fDGrqCM+7EPsD9vnOfjj0x8p1GX1n3TPFgNgWA==",
+  "dgSpecHash": "8itgwR0Jqc28UpuexBsc1mrg/g/27nTAIaciA3+Kz3NiZxKXpyQc9ChruDXx9x1kbDtZYc0bFDITPuBPSZT5Tw==",
   "success": true,
-  "projectFilePath": "/Users/sabakoghuashvili/Desktop/Girteka.AggregationApp/Girteka.AggregationApp/Girteka.AggregationApp.csproj",
+  "projectFilePath": "/Users/sabakoghuashvili/Desktop/Girteka.AggregationApp/Girteka/Girteka.AggregationApp/Girteka.AggregationApp.csproj",
   "expectedPackageFiles": [
     "/Users/sabakoghuashvili/.nuget/packages/azure.core/1.25.0/azure.core.1.25.0.nupkg.sha512",
     "/Users/sabakoghuashvili/.nuget/packages/azure.identity/1.7.0/azure.identity.1.7.0.nupkg.sha512",
