@@ -32,8 +32,9 @@ builder.Services.AddQuartz(q =>
         .ForJob(jobKey)
         .WithIdentity("YearlyJob-trigger")
         .StartNow()
-        .WithCronSchedule("0 0 0 1 1 ? *")
-    );
+        .WithSimpleSchedule(x => x
+            .WithInterval(TimeSpan.FromDays(365))
+            .RepeatForever()));
 });
 builder.Services.AddQuartzHostedService(q => q.WaitForJobsToComplete = true);
 
