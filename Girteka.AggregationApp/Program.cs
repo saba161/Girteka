@@ -1,4 +1,5 @@
 using Girteka.AggregationApp.Content;
+using Girteka.AggregationApp.Content.Http;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -6,10 +7,12 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Configuration.AddJsonFile("appsettings.json", optional: true);
 
 // Get the CsvUrl setting value
-var csvUrl = builder.Configuration.GetValue<string>("CsvUrl");
+var csvHttpUrl = builder.Configuration.GetValue<string>("CsvHttpUrl");
+var csvLocalpPath = builder.Configuration.GetValue<string>("CsvLocalpPath");
 
 // Add services to the container.
-builder.Services.AddScoped<IContent>(s => new HttpCsvContent(csvUrl));
+builder.Services.AddScoped<IHttpCsvContent>(s => new HttpCsvContent(csvHttpUrl));
+builder.Services.AddScoped<ILocalCsvContent>(s => new LocalCsvContent(csvLocalpPath));
 
 builder.Services.AddControllers();
 

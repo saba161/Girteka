@@ -1,6 +1,6 @@
-namespace Girteka.AggregationApp.Content;
+namespace Girteka.AggregationApp.Content.Http;
 
-public class HttpCsvContent : IContent
+public class HttpCsvContent : IHttpCsvContent
 {
     private readonly string _url;
 
