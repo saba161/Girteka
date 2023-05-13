@@ -6,6 +6,7 @@ using Girteka.AggregationApp.Services;
 using Microsoft.EntityFrameworkCore;
 using Quartz;
 
+
 var builder = WebApplication.CreateBuilder(args);
 ConfigurationManager configuration = builder.Configuration;
 
