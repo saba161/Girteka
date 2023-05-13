@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "Girteka.ElectricAggregate.Persistence/1.0.0": {
+        "runtime": {
+          "Girteka.ElectricAggregate.Persistence.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Girteka.ElectricAggregate.Persistence/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

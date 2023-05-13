@@ -1,6 +1,5 @@
 using Girteka.AggregationApp.Content;
 using Girteka.AggregationApp.Content.Http;
-using Girteka.AggregationApp.Models;
 using Girteka.AggregationApp.Models.Entity;
 using Girteka.AggregationApp.Services;
 using Microsoft.AspNetCore.Mvc;

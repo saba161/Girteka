@@ -1,0 +1,89 @@
+{
+  "version": 3,
+  "targets": {
+    "net7.0": {
+      "Girteka.ElectricAggregate.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/Girteka.ElectricAggregate.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Girteka.ElectricAggregate.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Girteka.ElectricAggregate.Domain/1.0.0": {
+      "type": "project",
+      "path": "../Girteka.ElectricAggregate.Domain/Girteka.ElectricAggregate.Domain.csproj",
+      "msbuildProject": "../Girteka.ElectricAggregate.Domain/Girteka.ElectricAggregate.Domain.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net7.0": [
+      "Girteka.ElectricAggregate.Domain >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "/Users/sabakoghuashvili/.nuget/packages/": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "/Users/sabakoghuashvili/Desktop/Girteka.AggregationApp/Girteka/Girteka.ElectricAggregate.Persistence/Girteka.ElectricAggregate.Persistence.csproj",
+      "projectName": "Girteka.ElectricAggregate.Persistence",
+      "projectPath": "/Users/sabakoghuashvili/Desktop/Girteka.AggregationApp/Girteka/Girteka.ElectricAggregate.Persistence/Girteka.ElectricAggregate.Persistence.csproj",
+      "packagesPath": "/Users/sabakoghuashvili/.nuget/packages/",
+      "outputPath": "/Users/sabakoghuashvili/Desktop/Girteka.AggregationApp/Girteka/Girteka.ElectricAggregate.Persistence/obj/",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "/Users/sabakoghuashvili/.nuget/NuGet/NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net7.0"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "projectReferences": {
+            "/Users/sabakoghuashvili/Desktop/Girteka.AggregationApp/Girteka/Girteka.ElectricAggregate.Domain/Girteka.ElectricAggregate.Domain.csproj": {
+              "projectPath": "/Users/sabakoghuashvili/Desktop/Girteka.AggregationApp/Girteka/Girteka.ElectricAggregate.Domain/Girteka.ElectricAggregate.Domain.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net7.0": {
+        "targetAlias": "net7.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "/Users/sabakoghuashvili/.dotnet/sdk/7.0.101/RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
