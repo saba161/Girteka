@@ -1,5 +1,4 @@
 using CsvHelper.Configuration;
-using Girteka.ElectricAggregate.Domain;
 using Girteka.ElectricAggregate.Domain.Models;
 
 namespace Girteka.ElectricAggregate.Domain;

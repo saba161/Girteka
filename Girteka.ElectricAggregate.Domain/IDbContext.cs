@@ -6,6 +6,7 @@ namespace Girteka.ElectricAggregate.Domain;
 public interface IDbContext
 {
     public DbSet<Electricity> Electricities { get; set; }
+    
     public void SaveChanges();
 
     public void Add<T>(T obj)
