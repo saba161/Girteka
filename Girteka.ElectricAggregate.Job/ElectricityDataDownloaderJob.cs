@@ -40,7 +40,8 @@ public class ElectricityDataDownloaderJob : IJob
 
         var fileName = uri.Segments.Last();
 
-        using var fileStream = new FileStream("/path/to/your/file/" + fileName, FileMode.Create);
+        //TODO we should write this uri in config
+        using var fileStream = new FileStream("/Users/sabakoghuashvili/Desktop/Temp/" + fileName, FileMode.Create);
         using var contentStream = await response.Content.ReadAsStreamAsync();
         await contentStream.CopyToAsync(fileStream);
     }
