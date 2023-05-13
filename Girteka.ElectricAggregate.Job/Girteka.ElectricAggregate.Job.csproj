@@ -9,6 +9,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="CsvHelper" Version="30.0.1" />
         <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.0" />
         <PackageReference Include="Quartz" Version="3.6.2" />
         <PackageReference Include="Quartz.Extensions.Hosting" Version="3.6.2" />
@@ -22,5 +23,6 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Girteka.ElectricAggregate.Domain\Girteka.ElectricAggregate.Domain.csproj" />
+      <ProjectReference Include="..\Girteka.ElectricAggregate.Persistence\Girteka.ElectricAggregate.Persistence.csproj" />
     </ItemGroup>
 </Project>

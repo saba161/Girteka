@@ -1,15 +1,20 @@
+using Girteka.ElectricAggregate.Domain;
 using Quartz;
 
 namespace Girteka.ElectricAggregate.Job;
 
 public class ElectricityDataDownloaderJob : IJob
 {
-    public async Task Execute(IJobExecutionContext context)
+    private readonly string _csvHttpUrl;
+    private readonly string _csvLocalpPath;
+
+    public ElectricityDataDownloaderJob(IConfiguration configuration)
     {
-        await DownloadFilesAsync();
+        _csvHttpUrl = configuration.GetValue<string>("CsvHttpUrl");
+        _csvLocalpPath = configuration.GetValue<string>("CsvLocalpPath");
     }
 
-    private async Task DownloadFilesAsync()
+    public async Task Execute(IJobExecutionContext context)
     {
         var uris = new List<Uri>
         {
@@ -20,29 +25,18 @@ public class ElectricityDataDownloaderJob : IJob
             new Uri("https://data.gov.lt/dataset/1975/download/10763/2022-02.csv")
         };
 
-        using var httpClient = new HttpClient();
-        httpClient.Timeout = TimeSpan.FromSeconds(500);
-        var tasks = new List<Task>();
-
-        foreach (var uri in uris)
+        var fileNames = new List<string>
         {
-            tasks.Add(DownloadFile(httpClient, uri));
-        }
+            "2022-05.csv",
+            // "2022-04.csv",
+            // "2022-03.csv",
+            // "2022-02.csv"
+        };
 
-        await Task.WhenAll(tasks);
-    }
+        //await new DonwloadCsvFiles(uris).Do();
 
-    private async Task DownloadFile(HttpClient client, Uri uri)
-    {
-        var response = await client.GetAsync(uri);
+        var readedFiles = await new ReadCsvFiles(fileNames, "/Users/sabakoghuashvili/Desktop/Data/").Do();
 
-        response.EnsureSuccessStatusCode();
-
-        var fileName = uri.Segments.Last();
-
-        //TODO we should write this uri in config
-        using var fileStream = new FileStream("/Users/sabakoghuashvili/Desktop/Temp/" + fileName, FileMode.Create);
-        using var contentStream = await response.Content.ReadAsStreamAsync();
-        await contentStream.CopyToAsync(fileStream);
+        await new TransformCsvFiles(readedFiles).Do();
     }
 }

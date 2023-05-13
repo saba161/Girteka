@@ -10,3 +10,8 @@
 /Users/sabakoghuashvili/Desktop/Girteka.AggregationApp/Girteka/Girteka.ElectricAggregate.Persistence/obj/Debug/net7.0/refint/Girteka.ElectricAggregate.Persistence.dll
 /Users/sabakoghuashvili/Desktop/Girteka.AggregationApp/Girteka/Girteka.ElectricAggregate.Persistence/obj/Debug/net7.0/Girteka.ElectricAggregate.Persistence.pdb
 /Users/sabakoghuashvili/Desktop/Girteka.AggregationApp/Girteka/Girteka.ElectricAggregate.Persistence/obj/Debug/net7.0/ref/Girteka.ElectricAggregate.Persistence.dll
+/Users/sabakoghuashvili/Desktop/Girteka.AggregationApp/Girteka/Girteka.ElectricAggregate.Persistence/bin/Debug/net7.0/Girteka.ElectricAggregate.Persistence.runtimeconfig.json
+/Users/sabakoghuashvili/Desktop/Girteka.AggregationApp/Girteka/Girteka.ElectricAggregate.Persistence/bin/Debug/net7.0/Girteka.ElectricAggregate.Domain.dll
+/Users/sabakoghuashvili/Desktop/Girteka.AggregationApp/Girteka/Girteka.ElectricAggregate.Persistence/bin/Debug/net7.0/Girteka.ElectricAggregate.Domain.pdb
+/Users/sabakoghuashvili/Desktop/Girteka.AggregationApp/Girteka/Girteka.ElectricAggregate.Persistence/obj/Debug/net7.0/Girteka.ElectricAggregate.Persistence.csproj.CopyComplete
+/Users/sabakoghuashvili/Desktop/Girteka.AggregationApp/Girteka/Girteka.ElectricAggregate.Persistence/obj/Debug/net7.0/Girteka.ElectricAggregate.Persistence.genruntimeconfig.cache
