@@ -1,21 +1,22 @@
-using Girteka.ElectricAggregate.Domain;
+using Girteka.ElectricAggregate.Domain.DownloadCsvFiles;
+using Girteka.ElectricAggregate.Domain.TransforCsvFiles;
 using Quartz;
 
 namespace Girteka.ElectricAggregate.Job;
 
 public class ElectricityDataDownloaderJob : IJob
 {
-    private readonly string _csvHttpUrl;
     private readonly string _csvLocalpPath;
-    private readonly IDonwloadCsvFiles _donwloadCsvFiles;
-    private readonly ITransformCsvFiles _transformCsvFiles;
+    private readonly IDownloadCsvFiles _donwloadCsvFiles;
+    private readonly ILogger<ElectricityDataDownloaderJob> _logger;
+    private readonly ILoadCsvFiles _loadCsvFiles;
 
-    public ElectricityDataDownloaderJob(IConfiguration configuration, IDonwloadCsvFiles donwloadCsvFiles,
-        ITransformCsvFiles transformCsvFiles)
+    public ElectricityDataDownloaderJob(IConfiguration configuration, IDownloadCsvFiles donwloadCsvFiles,
+        ILoadCsvFiles loadCsvFiles, ILogger<ElectricityDataDownloaderJob> logger)
     {
         _donwloadCsvFiles = donwloadCsvFiles;
-        _transformCsvFiles = transformCsvFiles;
-        _csvHttpUrl = configuration.GetValue<string>("CsvHttpUrl");
+        _loadCsvFiles = loadCsvFiles;
+        _logger = logger;
         _csvLocalpPath = configuration.GetValue<string>("CsvLocalpPath");
     }
 
@@ -23,9 +24,16 @@ public class ElectricityDataDownloaderJob : IJob
     {
         try
         {
-            List<Uri> uris = new List<Uri>();
+            _logger.LogInformation("HI");
+            var uris = new List<Uri>
+            {
+                new Uri("https://data.gov.lt/dataset/1975/download/10766/2022-05.csv"),
+                new Uri("https://data.gov.lt/dataset/1975/download/10765/2022-04.csv"),
+                new Uri("https://data.gov.lt/dataset/1975/download/10764/2022-03.csv"),
+                new Uri("https://data.gov.lt/dataset/1975/download/10763/2022-02.csv")
+            };
 
-            var fileNames = new List<string>
+            var fileNames = new List<string>()
             {
                 "2022-05.csv",
                 "2022-04.csv",
@@ -33,12 +41,8 @@ public class ElectricityDataDownloaderJob : IJob
                 "2022-02.csv"
             };
 
-            uris = fileNames
-                .Select(x => new Uri(_csvHttpUrl + x))
-                .ToList();
-
             await _donwloadCsvFiles.Do(_csvLocalpPath, uris);
-            await _transformCsvFiles.Do(fileNames, _csvLocalpPath);
+            await _loadCsvFiles.Do(fileNames, _csvLocalpPath);
         }
         catch (Exception e)
         {

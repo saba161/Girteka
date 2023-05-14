@@ -1,7 +1,7 @@
 using CsvHelper.Configuration;
 using Girteka.ElectricAggregate.Domain.Models;
 
-namespace Girteka.ElectricAggregate.Domain;
+namespace Girteka.ElectricAggregate.Domain.Mappers;
 
 public class ElectricityMapper : ClassMap<Electricity>
 {

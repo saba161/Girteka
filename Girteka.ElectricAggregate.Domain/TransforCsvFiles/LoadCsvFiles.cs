@@ -1,24 +1,28 @@
 using System.Globalization;
 using CsvHelper;
 using CsvHelper.Configuration;
-using Girteka.ElectricAggregate.Domain;
+using Girteka.ElectricAggregate.Domain.Mappers;
 using Girteka.ElectricAggregate.Domain.Models;
+using Microsoft.Extensions.Logging;
 
-namespace Girteka.ElectricAggregate.Job;
+namespace Girteka.ElectricAggregate.Domain.TransforCsvFiles;
 
-public class TransformCsvFiles : ITransformCsvFiles
+public class LoadCsvFiles : ILoadCsvFiles
 {
     private readonly IDbContext _dbContext;
+    private readonly ILogger<LoadCsvFiles> _logger;
 
-    public TransformCsvFiles(IDbContext dbContext)
+    public LoadCsvFiles(IDbContext dbContext, ILogger<LoadCsvFiles> logger)
     {
         _dbContext = dbContext;
+        _logger = logger;
     }
 
     public async Task Do(List<string> fileNames, string path)
     {
         try
         {
+            _logger.LogInformation("HI");
             var records = await ReadCsvFilesAsync(fileNames, path);
 
             var filteredData = records

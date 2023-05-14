@@ -23,7 +23,6 @@ public class ElectricityController : ControllerBase
         }
         catch (Exception e)
         {
-            Console.WriteLine(e);
             throw;
         }
     }

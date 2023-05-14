@@ -1,8 +1,6 @@
-using Girteka.ElectricAggregate.Domain;
+namespace Girteka.ElectricAggregate.Domain.DownloadCsvFiles;
 
-namespace Girteka.ElectricAggregate.Job;
-
-public class DonwloadCsvFiles : IDonwloadCsvFiles
+public class DownloadCsvFiles : IDownloadCsvFiles
 {
     public async Task Do(string path, List<Uri> uris)
     {
