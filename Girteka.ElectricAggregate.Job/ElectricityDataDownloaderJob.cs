@@ -12,7 +12,7 @@ public class ElectricityDataDownloaderJob : IJob
     public ElectricityDataDownloaderJob(IConfiguration configuration)
     {
         //_csvHttpUrl = configuration.GetValue<string>("CsvHttpUrl");
-        //_csvLocalpPath = configuration.GetValue<string>("CsvLocalpPath");
+        _csvLocalpPath = configuration.GetValue<string>("CsvLocalpPath");
     }
 
     public async Task Execute(IJobExecutionContext context)
