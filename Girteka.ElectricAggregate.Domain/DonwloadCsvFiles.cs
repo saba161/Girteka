@@ -2,10 +2,12 @@ namespace Girteka.ElectricAggregate.Domain;
 
 public class DonwloadCsvFiles
 {
+    private readonly string _path;
     private readonly List<Uri> _uris;
 
-    public DonwloadCsvFiles(List<Uri> uris)
+    public DonwloadCsvFiles(string path, List<Uri> uris)
     {
+        _path = path;
         _uris = uris;
     }
 
@@ -21,6 +23,7 @@ public class DonwloadCsvFiles
         }
 
         await Task.WhenAll(tasks);
+        //log
     }
 
     private async Task DownloadFile(HttpClient client, Uri uri)
@@ -32,7 +35,8 @@ public class DonwloadCsvFiles
         var fileName = uri.Segments.Last();
 
         //TODO we should write this uri in config
-        using var fileStream = new FileStream("/Users/sabakoghuashvili/Desktop/Temp/" + fileName, FileMode.Create);
+
+        using var fileStream = new FileStream(_path + fileName, FileMode.Create);
         using var contentStream = await response.Content.ReadAsStreamAsync();
         await contentStream.CopyToAsync(fileStream);
     }

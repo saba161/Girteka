@@ -22,7 +22,7 @@ namespace Girteka.ElectricAggregate.Persistence.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Girteka.ElectricAggregate.Domain.Models.Electricity", b =>
+            modelBuilder.Entity("Girteka.ElectricAggregate.Domain.Logger.Log", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -30,8 +30,25 @@ namespace Girteka.ElectricAggregate.Persistence.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int?>("Numeris")
+                    b.Property<string>("Message")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Timestamp")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Logs");
+                });
+
+            modelBuilder.Entity("Girteka.ElectricAggregate.Domain.Models.Electricity", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<decimal?>("PMinus")
                         .HasColumnType("decimal(18,2)");
@@ -46,9 +63,6 @@ namespace Girteka.ElectricAggregate.Persistence.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Tinklas")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Tipas")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");

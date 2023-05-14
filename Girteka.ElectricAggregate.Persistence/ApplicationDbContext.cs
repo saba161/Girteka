@@ -1,5 +1,5 @@
 using Girteka.ElectricAggregate.Domain;
-using Girteka.ElectricAggregate.Domain.Logger;
+using Girteka.ElectricAggregate.Domain.Models;
 using Girteka.ElectricAggregate.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 

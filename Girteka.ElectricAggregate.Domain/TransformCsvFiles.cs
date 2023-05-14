@@ -1,4 +1,3 @@
-using System.Diagnostics;
 using System.Globalization;
 using CsvHelper;
 using CsvHelper.Configuration;
@@ -27,26 +26,25 @@ public class TransformCsvFiles
         {
             var records = await ReadCsvFilesAsync();
 
-            //DateTime today = DateTime.Today;
-            //DateTime fourMonthsAgo = today.AddMonths(-4);
-
-            // var filteredData = records
-            //     .Where(x => x.Pavadinimas == "Butas" && x.PlT >= fourMonthsAgo && x.PlT <= today);
-
-            // var filteredData = records
-            //     .Where(x => x.Pavadinimas == "Butas")
-            //     .GroupBy(x => x.Tinklas);
-
             var filteredData = records
                 .Where(x => x.Pavadinimas == "Butas")
-                .GroupBy(x => x.Tinklas);
+                .GroupBy(x => x.Tinklas)
+                .Select(s => new Electricity()
+                {
+                    Tinklas = s.Key,
+                    Pavadinimas = "Butas",
+                    PPlus = s.Sum(x => x.PPlus),
+                    PMinus = s.Sum(x => x.PMinus),
+                    //Date
+                });
 
-            //await _dbContext.Electricities.AddRangeAsync(filteredData);
+            await _dbContext.Electricities.AddRangeAsync(filteredData);
 
             await _dbContext.SaveChangesAsync();
         }
         catch (Exception e)
         {
+            //log
             Console.WriteLine(e);
             throw;
         }
@@ -54,8 +52,6 @@ public class TransformCsvFiles
 
     private async Task<List<Electricity>> ReadCsvFilesAsync()
     {
-        var stopwatch = Stopwatch.StartNew();
-
         var records = new List<Electricity>();
 
         foreach (var fileName in _fileNames)
@@ -80,12 +76,11 @@ public class TransformCsvFiles
                         records.AddRange(fileRecords);
                     }
                 }
-
-                stopwatch.Stop();
-                Console.WriteLine($"ReadCsvFilesAsync execution time: {stopwatch.ElapsedMilliseconds} ms");
+                //log
             }
             catch (Exception e)
             {
+                //log
                 Console.WriteLine("Error: " + e.Message);
                 throw;
             }

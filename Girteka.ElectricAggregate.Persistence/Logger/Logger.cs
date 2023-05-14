@@ -1,4 +1,4 @@
-using Girteka.ElectricAggregate.Domain.Logger;
+using Girteka.ElectricAggregate.Domain.Models;
 using Microsoft.Extensions.Logging;
 
 namespace Girteka.ElectricAggregate.Persistence.Logger;

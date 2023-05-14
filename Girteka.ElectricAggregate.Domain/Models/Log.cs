@@ -1,4 +1,4 @@
-namespace Girteka.ElectricAggregate.Domain.Logger;
+namespace Girteka.ElectricAggregate.Domain.Models;
 
 public class Log
 {
