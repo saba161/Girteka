@@ -1,4 +1,5 @@
 using Girteka.ElectricAggregate.Domain;
+using Girteka.ElectricAggregate.Domain.Logger;
 using Girteka.ElectricAggregate.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -25,14 +26,10 @@ public class ApplicationDbContext : DbContext, IDbContext
 
     public virtual DbSet<Electricity> Electricities { get; set; }
 
-    public void SaveChanges()
-    {
-        base.SaveChanges();
-    }
+    public virtual DbSet<Log> Logs { get; set; }
 
-    public void Add<T>(T obj)
-        where T : class
+    public Task SaveChangesAsync()
     {
-        base.Add(obj);
+        return base.SaveChangesAsync();
     }
 }

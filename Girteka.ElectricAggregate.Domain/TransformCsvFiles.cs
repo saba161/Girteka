@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using System.Globalization;
 using CsvHelper;
 using CsvHelper.Configuration;
@@ -22,15 +23,39 @@ public class TransformCsvFiles
 
     public async Task Do()
     {
-        var records = await ReadCsvFiles();
+        try
+        {
+            var records = await ReadCsvFilesAsync();
 
-        _dbContext.Add(records.FirstOrDefault());
-        
-        _dbContext.SaveChanges();
+            //DateTime today = DateTime.Today;
+            //DateTime fourMonthsAgo = today.AddMonths(-4);
+
+            // var filteredData = records
+            //     .Where(x => x.Pavadinimas == "Butas" && x.PlT >= fourMonthsAgo && x.PlT <= today);
+
+            // var filteredData = records
+            //     .Where(x => x.Pavadinimas == "Butas")
+            //     .GroupBy(x => x.Tinklas);
+
+            var filteredData = records
+                .Where(x => x.Pavadinimas == "Butas")
+                .GroupBy(x => x.Tinklas);
+
+            //await _dbContext.Electricities.AddRangeAsync(filteredData);
+
+            await _dbContext.SaveChangesAsync();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
     }
 
-    private async Task<List<Electricity>> ReadCsvFiles()
+    private async Task<List<Electricity>> ReadCsvFilesAsync()
     {
+        var stopwatch = Stopwatch.StartNew();
+
         var records = new List<Electricity>();
 
         foreach (var fileName in _fileNames)
@@ -55,6 +80,9 @@ public class TransformCsvFiles
                         records.AddRange(fileRecords);
                     }
                 }
+
+                stopwatch.Stop();
+                Console.WriteLine($"ReadCsvFilesAsync execution time: {stopwatch.ElapsedMilliseconds} ms");
             }
             catch (Exception e)
             {
@@ -63,6 +91,6 @@ public class TransformCsvFiles
             }
         }
 
-        return records;
+        return await Task.FromResult(records);
     }
 }
