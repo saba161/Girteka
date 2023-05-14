@@ -13,7 +13,6 @@ IHost host = Host.CreateDefaultBuilder(args)
         services.AddScoped<ILoadCsvFiles, LoadCsvFiles>();
         services.AddScoped<IDbContext, ApplicationDbContext>();
 
-        
         services.AddQuartz(q =>
         {
             q.UseMicrosoftDependencyInjectionScopedJobFactory();

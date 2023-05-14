@@ -8,10 +8,12 @@ namespace Girteka.ElectricAggregate.API.Controllers;
 public class ElectricityController : ControllerBase
 {
     private readonly IElectricity _electricity;
+    private readonly ILogger<ElectricityController> _logger;
 
-    public ElectricityController(IElectricity electricity)
+    public ElectricityController(IElectricity electricity, ILogger<ElectricityController> logger)
     {
         _electricity = electricity;
+        _logger = logger;
     }
 
     [HttpGet("get/electricity")]
@@ -23,6 +25,7 @@ public class ElectricityController : ControllerBase
         }
         catch (Exception e)
         {
+            _logger.LogInformation(e.Message);
             throw;
         }
     }

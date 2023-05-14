@@ -36,12 +36,12 @@ public class ElectricityDataDownloaderJob : IJob
             var fileNames = new List<string>()
             {
                 "2022-05.csv",
-                "2022-04.csv",
-                "2022-03.csv",
-                "2022-02.csv"
+                //"2022-04.csv",
+                //"2022-03.csv",
+                //"2022-02.csv"
             };
 
-            await _donwloadCsvFiles.Do(_csvLocalpPath, uris);
+            //await _donwloadCsvFiles.Do(_csvLocalpPath, uris);
             await _loadCsvFiles.Do(fileNames, _csvLocalpPath);
         }
         catch (Exception e)
