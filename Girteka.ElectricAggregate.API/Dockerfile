@@ -6,6 +6,8 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
 COPY ["Girteka.ElectricAggregate.API/Girteka.ElectricAggregate.API.csproj", "Girteka.ElectricAggregate.API/"]
+COPY ["Girteka.ElectricAggregate.Domain/Girteka.ElectricAggregate.Domain.csproj", "Girteka.ElectricAggregate.Domain/"]
+COPY ["Girteka.ElectricAggregate.Persistence/Girteka.ElectricAggregate.Persistence.csproj", "Girteka.ElectricAggregate.Persistence/"]
 RUN dotnet restore "Girteka.ElectricAggregate.API/Girteka.ElectricAggregate.API.csproj"
 COPY . .
 WORKDIR "/src/Girteka.ElectricAggregate.API"

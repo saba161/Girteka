@@ -4,6 +4,8 @@ WORKDIR /app
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
 COPY ["Girteka.ElectricAggregate.Job/Girteka.ElectricAggregate.Job.csproj", "Girteka.ElectricAggregate.Job/"]
+COPY ["Girteka.ElectricAggregate.Domain/Girteka.ElectricAggregate.Domain.csproj", "Girteka.ElectricAggregate.Domain/"]
+COPY ["Girteka.ElectricAggregate.Persistence/Girteka.ElectricAggregate.Persistence.csproj", "Girteka.ElectricAggregate.Persistence/"]
 RUN dotnet restore "Girteka.ElectricAggregate.Job/Girteka.ElectricAggregate.Job.csproj"
 COPY . .
 WORKDIR "/src/Girteka.ElectricAggregate.Job"

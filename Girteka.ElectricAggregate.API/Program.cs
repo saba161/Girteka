@@ -1,4 +1,6 @@
+using Girteka.ElectricAggregate.Domain;
 using Girteka.ElectricAggregate.Persistence;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,6 +8,9 @@ ConfigurationManager configuration = builder.Configuration;
 
 // Add services to the container.
 builder.Configuration.AddJsonFile("appsettings.json", optional: true);
+builder.Services.AddScoped<IDbContext, ApplicationDbContext>();
+builder.Services.AddScoped<IElectricity, GetElectricity>();
+
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
