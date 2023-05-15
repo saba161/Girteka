@@ -24,6 +24,8 @@ public class LoadCsvFiles : ILoadCsvFiles
         {
             var records = await ReadCsvFilesAsync(fileNames, path);
 
+            _logger.LogInformation($"Files readed from local disk");
+
             var filteredData = records
                 .Where(x => x.Pavadinimas == "Butas")
                 .GroupBy(x => x.Tinklas)
@@ -36,9 +38,10 @@ public class LoadCsvFiles : ILoadCsvFiles
                     //Date
                 });
 
-            await _dbContext.Electricities.AddRangeAsync(filteredData);
+            _logger.LogInformation($"records are filtered");
 
-            _logger.LogInformation("Saving changes to the database");
+            await _dbContext.Electricities.AddRangeAsync(filteredData);
+            
             await _dbContext.SaveChangesAsync();
 
             _logger.LogInformation("Changes saved to the database");

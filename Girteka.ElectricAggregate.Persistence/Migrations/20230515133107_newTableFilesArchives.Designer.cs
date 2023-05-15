@@ -4,6 +4,7 @@ using Girteka.ElectricAggregate.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Girteka.ElectricAggregate.Persistence.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230515133107_newTableFilesArchives")]
+    partial class newTableFilesArchives
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -50,7 +53,7 @@ namespace Girteka.ElectricAggregate.Persistence.Migrations
                     b.ToTable("Electricities");
                 });
 
-            modelBuilder.Entity("Girteka.ElectricAggregate.Domain.Models.FileLog", b =>
+            modelBuilder.Entity("Girteka.ElectricAggregate.Domain.Models.FilesArchive", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -65,13 +68,9 @@ namespace Girteka.ElectricAggregate.Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Status")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("Id");
 
-                    b.ToTable("FileLogs");
+                    b.ToTable("FilesArchives");
                 });
 
             modelBuilder.Entity("Girteka.ElectricAggregate.Domain.Models.Log", b =>

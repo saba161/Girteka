@@ -16,6 +16,7 @@ IHost host = Host.CreateDefaultBuilder(args)
         services.AddScoped<IDownloadCsvFiles, DonwloadCsvFiles>();
         services.AddScoped<ILoadCsvFiles, LoadCsvFiles>();
         services.AddScoped<IDbContext, ApplicationDbContext>();
+        services.AddScoped<IFileArchive, FileArchive>();
 
         services.AddLogging(builder =>
         {
