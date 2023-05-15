@@ -35,7 +35,6 @@ public class LoadCsvFiles : ILoadCsvFiles
                     Pavadinimas = "Butas",
                     PPlus = s.Sum(x => x.PPlus),
                     PMinus = s.Sum(x => x.PMinus),
-                    //Date
                 });
 
             _logger.LogInformation($"records are filtered");

@@ -1,4 +1,5 @@
 using Girteka.ElectricAggregate.Domain.DownloadCsvFiles;
+using Girteka.ElectricAggregate.Domain.Services;
 using Girteka.ElectricAggregate.Domain.TransforCsvFiles;
 using Girteka.ElectricAggregate.Integrations;
 using Quartz;
@@ -11,13 +12,15 @@ public class ElectricityDataDownloaderJob : IJob
     private readonly IDownloadCsvFiles _donwloadCsvFiles;
     private readonly ILogger<ElectricityDataDownloaderJob> _logger;
     private readonly ILoadCsvFiles _loadCsvFiles;
+    private readonly IFilesService _filesService;
 
     public ElectricityDataDownloaderJob(IConfiguration configuration, IDownloadCsvFiles donwloadCsvFiles,
-        ILoadCsvFiles loadCsvFiles, ILogger<ElectricityDataDownloaderJob> logger)
+        ILoadCsvFiles loadCsvFiles, ILogger<ElectricityDataDownloaderJob> logger, IFilesService filesService)
     {
         _donwloadCsvFiles = donwloadCsvFiles;
         _loadCsvFiles = loadCsvFiles;
         _logger = logger;
+        _filesService = filesService;
         _csvLocalpPath = configuration.GetValue<string>("CsvLocalpPath");
     }
 
@@ -25,9 +28,9 @@ public class ElectricityDataDownloaderJob : IJob
     {
         try
         {
-            new CSVFileFromHTTTP(null, new HttpClient()).Do("2022-04.csv");
-
-            new CSVFileFromLocalDisk().Do("2022-05.csv");
+            // new CSVFileFromHTTTP(null, new HttpClient()).Do("2022-04.csv");
+            //
+            // new CSVFileFromLocalDisk().Do("2022-05.csv");
 
 
             _logger.LogInformation("Start Execute Job");
@@ -46,6 +49,9 @@ public class ElectricityDataDownloaderJob : IJob
                 "2022-03.csv",
                 "2022-02.csv"
             };
+
+            _filesService.Execute(fileNames);
+
 
             await _donwloadCsvFiles.Do(_csvLocalpPath, uris);
             await _loadCsvFiles.Do(fileNames, _csvLocalpPath);

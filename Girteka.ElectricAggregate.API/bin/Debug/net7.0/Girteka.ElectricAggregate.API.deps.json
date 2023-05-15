@@ -9,6 +9,7 @@
       "Girteka.ElectricAggregate.API/1.0.0": {
         "dependencies": {
           "Girteka.ElectricAggregate.Domain": "1.0.0",
+          "Girteka.ElectricAggregate.Integrations": "1.0.0",
           "Girteka.ElectricAggregate.Persistence": "1.0.0",
           "Microsoft.AspNetCore.OpenApi": "7.0.1",
           "Microsoft.EntityFrameworkCore.Design": "8.0.0-preview.3.23174.2",
@@ -703,6 +704,15 @@
           "Girteka.ElectricAggregate.Domain.dll": {}
         }
       },
+      "Girteka.ElectricAggregate.Integrations/1.0.0": {
+        "dependencies": {
+          "Girteka.ElectricAggregate.Domain": "1.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "8.0.0-preview.3.23174.8"
+        },
+        "runtime": {
+          "Girteka.ElectricAggregate.Integrations.dll": {}
+        }
+      },
       "Girteka.ElectricAggregate.Persistence/1.0.0": {
         "dependencies": {
           "Girteka.ElectricAggregate.Domain": "1.0.0",
@@ -1191,6 +1201,11 @@
       "hashPath": "system.windows.extensions.6.0.0.nupkg.sha512"
     },
     "Girteka.ElectricAggregate.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Girteka.ElectricAggregate.Integrations/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

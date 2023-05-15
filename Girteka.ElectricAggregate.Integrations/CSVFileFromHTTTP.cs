@@ -17,7 +17,7 @@ public class CSVFileFromHTTTP : IContext<string, Stream>
 
     public Stream Do(string fileName)
     {
-        Uri uri = new Uri("https://data.gov.lt/dataset/1975/download/10766/2022-05.csv");
+        Uri uri = new Uri("https://data.gov.lt/dataset/1975/download/10766/" + fileName);
         var response = _client.GetAsync(uri).Result;
 
         response.EnsureSuccessStatusCode();
