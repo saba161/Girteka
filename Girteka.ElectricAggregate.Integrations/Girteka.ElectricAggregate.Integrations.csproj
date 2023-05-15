@@ -10,4 +10,8 @@
       <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.0-preview.3.23174.8" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Girteka.ElectricAggregate.Domain\Girteka.ElectricAggregate.Domain.csproj" />
+    </ItemGroup>
+
 </Project>

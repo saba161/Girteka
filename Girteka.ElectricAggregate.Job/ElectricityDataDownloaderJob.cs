@@ -1,5 +1,6 @@
 using Girteka.ElectricAggregate.Domain.DownloadCsvFiles;
 using Girteka.ElectricAggregate.Domain.TransforCsvFiles;
+using Girteka.ElectricAggregate.Integrations;
 using Quartz;
 
 namespace Girteka.ElectricAggregate.Job;
@@ -24,6 +25,11 @@ public class ElectricityDataDownloaderJob : IJob
     {
         try
         {
+            new CSVFileFromHTTTP(null, new HttpClient()).Do("2022-04.csv");
+
+            new CSVFileFromLocalDisk().Do("2022-05.csv");
+
+
             _logger.LogInformation("Start Execute Job");
             var uris = new List<Uri>
             {

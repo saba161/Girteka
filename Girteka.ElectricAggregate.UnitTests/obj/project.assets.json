@@ -2406,12 +2406,27 @@
           "bin/placeholder/Girteka.ElectricAggregate.Domain.dll": {}
         }
       },
+      "Girteka.ElectricAggregate.Integrations/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Girteka.ElectricAggregate.Domain": "1.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "8.0.0-preview.3.23174.8"
+        },
+        "compile": {
+          "bin/placeholder/Girteka.ElectricAggregate.Integrations.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Girteka.ElectricAggregate.Integrations.dll": {}
+        }
+      },
       "Girteka.ElectricAggregate.Job/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "CsvHelper": "30.0.1",
           "Girteka.ElectricAggregate.Domain": "1.0.0",
+          "Girteka.ElectricAggregate.Integrations": "1.0.0",
           "Girteka.ElectricAggregate.Persistence": "1.0.0",
           "Microsoft.Extensions.Hosting": "7.0.0",
           "Quartz": "3.6.2",
@@ -7532,6 +7547,11 @@
       "type": "project",
       "path": "../Girteka.ElectricAggregate.Domain/Girteka.ElectricAggregate.Domain.csproj",
       "msbuildProject": "../Girteka.ElectricAggregate.Domain/Girteka.ElectricAggregate.Domain.csproj"
+    },
+    "Girteka.ElectricAggregate.Integrations/1.0.0": {
+      "type": "project",
+      "path": "../Girteka.ElectricAggregate.Integrations/Girteka.ElectricAggregate.Integrations.csproj",
+      "msbuildProject": "../Girteka.ElectricAggregate.Integrations/Girteka.ElectricAggregate.Integrations.csproj"
     },
     "Girteka.ElectricAggregate.Job/1.0.0": {
       "type": "project",
