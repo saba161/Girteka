@@ -1,4 +1,5 @@
 using Girteka.ElectricAggregate.Domain;
+using Girteka.ElectricAggregate.Domain.DownloadCsvFiles;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Girteka.ElectricAggregate.API.Controllers;
@@ -8,12 +9,14 @@ namespace Girteka.ElectricAggregate.API.Controllers;
 public class ElectricityController : ControllerBase
 {
     private readonly IElectricity _electricity;
+    private readonly IDownloadCsvFiles _csv;
     private readonly ILogger<ElectricityController> _logger;
 
-    public ElectricityController(IElectricity electricity, ILogger<ElectricityController> logger)
+    public ElectricityController(IElectricity electricity, ILogger<ElectricityController> logger, IDownloadCsvFiles csv)
     {
         _electricity = electricity;
         _logger = logger;
+        _csv = csv;
     }
 
     [HttpGet("get/electricity")]
@@ -21,6 +24,8 @@ public class ElectricityController : ControllerBase
     {
         try
         {
+            _logger.LogInformation("Start Execute Job");
+
             return Ok(await _electricity.Get());
         }
         catch (Exception e)

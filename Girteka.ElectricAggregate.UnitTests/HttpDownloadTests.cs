@@ -37,4 +37,20 @@ public class HttpDownloadTests
     {
         _httpClient.Dispose();
     }
+
+    [Test]
+    public void Sum()
+    {
+        // Arrange
+        var a = 1;
+        var b = 2;
+        
+        var expected = 3;
+        
+        // Act
+        var sum = a + b;
+        
+        // Assert
+        Assert.AreEqual(sum, expected);
+    }
 }

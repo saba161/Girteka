@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "ktOv4b0yDCdIw0ttHyO/R7G1Y+oZ6DqYYpHk2CTibdb8fhwSrkLfLpn1FxckjpzknUzL6/1qlYKiVqKqVuKyMw==",
+  "dgSpecHash": "4N2X3vQDxHlxKyA+xytvt3ItuMtRAvVg661wi2+K6oFm/ALGteBt393QUiUBeppE+nzH4gFW0ulZxkDT5sDxPw==",
   "success": true,
   "projectFilePath": "/Users/sabakoghuashvili/Desktop/Girteka.AggregationApp/Girteka/Girteka.ElectricAggregate.UnitTests/Girteka.ElectricAggregate.UnitTests.csproj",
   "expectedPackageFiles": [
     "/Users/sabakoghuashvili/.nuget/packages/azure.core/1.25.0/azure.core.1.25.0.nupkg.sha512",
     "/Users/sabakoghuashvili/.nuget/packages/azure.identity/1.7.0/azure.identity.1.7.0.nupkg.sha512",
+    "/Users/sabakoghuashvili/.nuget/packages/castle.core/5.1.1/castle.core.5.1.1.nupkg.sha512",
     "/Users/sabakoghuashvili/.nuget/packages/coverlet.collector/3.1.2/coverlet.collector.3.1.2.nupkg.sha512",
     "/Users/sabakoghuashvili/.nuget/packages/csvhelper/30.0.1/csvhelper.30.0.1.nupkg.sha512",
     "/Users/sabakoghuashvili/.nuget/packages/microsoft.bcl.asyncinterfaces/1.1.1/microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
@@ -61,6 +62,7 @@
     "/Users/sabakoghuashvili/.nuget/packages/microsoft.testplatform.objectmodel/17.3.2/microsoft.testplatform.objectmodel.17.3.2.nupkg.sha512",
     "/Users/sabakoghuashvili/.nuget/packages/microsoft.testplatform.testhost/17.3.2/microsoft.testplatform.testhost.17.3.2.nupkg.sha512",
     "/Users/sabakoghuashvili/.nuget/packages/microsoft.win32.systemevents/6.0.0/microsoft.win32.systemevents.6.0.0.nupkg.sha512",
+    "/Users/sabakoghuashvili/.nuget/packages/moq/4.18.4/moq.4.18.4.nupkg.sha512",
     "/Users/sabakoghuashvili/.nuget/packages/netstandard.library/2.0.0/netstandard.library.2.0.0.nupkg.sha512",
     "/Users/sabakoghuashvili/.nuget/packages/newtonsoft.json/9.0.1/newtonsoft.json.9.0.1.nupkg.sha512",
     "/Users/sabakoghuashvili/.nuget/packages/nuget.frameworks/5.11.0/nuget.frameworks.5.11.0.nupkg.sha512",

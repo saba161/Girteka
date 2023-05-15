@@ -22,7 +22,6 @@ public class LoadCsvFiles : ILoadCsvFiles
     {
         try
         {
-            _logger.LogInformation("HI From LoadCsvFiles");
             var records = await ReadCsvFilesAsync(fileNames, path);
 
             var filteredData = records
@@ -39,15 +38,14 @@ public class LoadCsvFiles : ILoadCsvFiles
 
             await _dbContext.Electricities.AddRangeAsync(filteredData);
 
-            _logger.LogInformation("Saving changes to the database...");
+            _logger.LogInformation("Saving changes to the database");
             await _dbContext.SaveChangesAsync();
 
-            _logger.LogInformation("Changes saved to the database.");
+            _logger.LogInformation("Changes saved to the database");
         }
         catch (Exception e)
         {
-            //log
-            Console.WriteLine(e);
+            _logger.LogError(e.Message);
             throw;
         }
     }
@@ -78,12 +76,10 @@ public class LoadCsvFiles : ILoadCsvFiles
                         records.AddRange(fileRecords);
                     }
                 }
-                //log
             }
             catch (Exception e)
             {
-                //log
-                Console.WriteLine("Error: " + e.Message);
+                _logger.LogError(e.Message);
                 throw;
             }
         }

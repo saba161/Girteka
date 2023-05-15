@@ -24,7 +24,7 @@ public class ElectricityDataDownloaderJob : IJob
     {
         try
         {
-            _logger.LogInformation("HI");
+            _logger.LogInformation("Start Execute Job");
             var uris = new List<Uri>
             {
                 new Uri("https://data.gov.lt/dataset/1975/download/10766/2022-05.csv"),
@@ -36,17 +36,19 @@ public class ElectricityDataDownloaderJob : IJob
             var fileNames = new List<string>()
             {
                 "2022-05.csv",
-                //"2022-04.csv",
-                //"2022-03.csv",
-                //"2022-02.csv"
+                "2022-04.csv",
+                "2022-03.csv",
+                "2022-02.csv"
             };
 
-            //await _donwloadCsvFiles.Do(_csvLocalpPath, uris);
+            await _donwloadCsvFiles.Do(_csvLocalpPath, uris);
             await _loadCsvFiles.Do(fileNames, _csvLocalpPath);
+
+            _logger.LogInformation("Job complete work Successfully");
         }
         catch (Exception e)
         {
-            Console.WriteLine(e);
+            _logger.LogError(e.Message);
             throw;
         }
     }

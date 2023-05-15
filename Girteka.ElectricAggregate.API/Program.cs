@@ -1,10 +1,8 @@
 using Girteka.ElectricAggregate.Domain;
+using Girteka.ElectricAggregate.Domain.DownloadCsvFiles;
 using Girteka.ElectricAggregate.Persistence;
 using Girteka.ElectricAggregate.Persistence.Logger;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
 
 var builder = WebApplication.CreateBuilder(args);
 ConfigurationManager configuration = builder.Configuration;
@@ -12,7 +10,8 @@ ConfigurationManager configuration = builder.Configuration;
 // Add services to the container.
 builder.Configuration.AddJsonFile("appsettings.json", optional: true);
 builder.Services.AddScoped<IDbContext, ApplicationDbContext>();
-builder.Services.AddScoped<IElectricity, GetElectricity>();
+builder.Services.AddScoped<IElectricity, ElectricityRepository>();
+builder.Services.AddScoped<IDownloadCsvFiles, DownloadCsvFiles>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

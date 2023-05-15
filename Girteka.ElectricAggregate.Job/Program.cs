@@ -3,15 +3,25 @@ using Girteka.ElectricAggregate.Domain.DownloadCsvFiles;
 using Girteka.ElectricAggregate.Domain.TransforCsvFiles;
 using Girteka.ElectricAggregate.Job;
 using Girteka.ElectricAggregate.Persistence;
+using Girteka.ElectricAggregate.Persistence.Logger;
+using Microsoft.Extensions.Options;
 using Quartz;
 using DonwloadCsvFiles = Girteka.ElectricAggregate.Domain.DownloadCsvFiles.DownloadCsvFiles;
 
 IHost host = Host.CreateDefaultBuilder(args)
-    .ConfigureServices(services =>
+    .ConfigureServices((ctx, services) =>
     {
+        var connectionString = ctx.Configuration.GetConnectionString("DefaultConnection");
+
         services.AddScoped<IDownloadCsvFiles, DonwloadCsvFiles>();
         services.AddScoped<ILoadCsvFiles, LoadCsvFiles>();
         services.AddScoped<IDbContext, ApplicationDbContext>();
+
+        services.AddLogging(builder =>
+        {
+            builder.AddProvider(new DatabaseLoggerProvider(
+                (category, level) => level >= LogLevel.Information, connectionString));
+        });
 
         services.AddQuartz(q =>
         {

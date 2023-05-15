@@ -181,3 +181,5 @@
 /Users/sabakoghuashvili/Desktop/Girteka.AggregationApp/Girteka/Girteka.ElectricAggregate.UnitTests/bin/Debug/net7.0/Girteka.ElectricAggregate.Domain.pdb
 /Users/sabakoghuashvili/Desktop/Girteka.AggregationApp/Girteka/Girteka.ElectricAggregate.UnitTests/bin/Debug/net7.0/Girteka.ElectricAggregate.Job.pdb
 /Users/sabakoghuashvili/Desktop/Girteka.AggregationApp/Girteka/Girteka.ElectricAggregate.UnitTests/bin/Debug/net7.0/Girteka.ElectricAggregate.Persistence.pdb
+/Users/sabakoghuashvili/Desktop/Girteka.AggregationApp/Girteka/Girteka.ElectricAggregate.UnitTests/bin/Debug/net7.0/Castle.Core.dll
+/Users/sabakoghuashvili/Desktop/Girteka.AggregationApp/Girteka/Girteka.ElectricAggregate.UnitTests/bin/Debug/net7.0/Moq.dll

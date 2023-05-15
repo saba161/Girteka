@@ -3,11 +3,11 @@ using Girteka.ElectricAggregate.Domain.Models;
 
 namespace Girteka.ElectricAggregate.Persistence;
 
-public class GetElectricity : IElectricity
+public class ElectricityRepository : IElectricity
 {
     private readonly IDbContext _dbContext;
 
-    public GetElectricity(IDbContext dbContext)
+    public ElectricityRepository(IDbContext dbContext)
     {
         _dbContext = dbContext;
     }
