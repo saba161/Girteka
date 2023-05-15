@@ -12,6 +12,7 @@ builder.Configuration.AddJsonFile("appsettings.json", optional: true);
 builder.Services.AddScoped<IDbContext, ApplicationDbContext>();
 builder.Services.AddScoped<IElectricity, ElectricityRepository>();
 builder.Services.AddScoped<IDownloadCsvFiles, DownloadCsvFiles>();
+builder.Services.AddScoped<IFileArchive, FileArchive>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

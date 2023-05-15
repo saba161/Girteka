@@ -24,8 +24,6 @@ public class ElectricityController : ControllerBase
     {
         try
         {
-            _logger.LogInformation("Start Execute Job");
-
             return Ok(await _electricity.Get());
         }
         catch (Exception e)
