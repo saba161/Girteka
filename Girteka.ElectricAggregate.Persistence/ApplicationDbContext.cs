@@ -20,14 +20,14 @@ public class ApplicationDbContext : DbContext, IDbContext
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         optionsBuilder.UseSqlServer(
-            "Data Source=localhost;Initial Catalog=Electricity;User Id=sa; Password=YourStrongP@ssword; TrustServerCertificate=True;");
+            "Data Source=localhost;Initial Catalog=Electricity;User Id=sa; Password=reallyStrongPwd123; TrustServerCertificate=True;");
     }
 
     public virtual DbSet<Electricity> Electricities { get; set; }
 
     public virtual DbSet<Log> Logs { get; set; }
 
-    public virtual DbSet<FileLog> FileLogs{ get; set; }
+    public virtual DbSet<FileLog> FileLogs { get; set; }
 
     public Task SaveChangesAsync()
     {

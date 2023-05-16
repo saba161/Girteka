@@ -1,6 +1,6 @@
 namespace Girteka.ElectricAggregate.UnitTests;
 
-public class HttpDownloadTests
+public class ElectrecityJobTest
 {
     private HttpClient _httpClient;
 
@@ -9,6 +9,7 @@ public class HttpDownloadTests
     {
         _httpClient = new HttpClient();
     }
+
 
     [Test]
     public async Task CanDownloadCsvFiles()
@@ -32,25 +33,30 @@ public class HttpDownloadTests
         }
     }
 
+    [Test]
+    public async Task CanReadCsvFiles()
+    {
+        FileStream result = null;
+        var localFiles = new[]
+        {
+            "/Users/sabakoghuashvili/Desktop/Temp/2022-05.csv",
+            "/Users/sabakoghuashvili/Desktop/Temp/2022-04.csv"
+        };
+
+        foreach (var path in localFiles)
+        {
+            string fileName = path.Split('/').Last();
+
+            result = File.Open(path, FileMode.Open);
+            
+            Assert.IsTrue(result.Length > 0);
+            result.Close();
+        }
+    }
+
     [TearDown]
     public void Teardown()
     {
         _httpClient.Dispose();
-    }
-
-    [Test]
-    public void Sum()
-    {
-        // Arrange
-        var a = 1;
-        var b = 2;
-        
-        var expected = 3;
-        
-        // Act
-        var sum = a + b;
-        
-        // Assert
-        Assert.AreEqual(sum, expected);
     }
 }

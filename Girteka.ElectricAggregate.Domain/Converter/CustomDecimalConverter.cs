@@ -2,7 +2,7 @@ using CsvHelper;
 using CsvHelper.Configuration;
 using CsvHelper.TypeConversion;
 
-namespace Girteka.ElectricAggregate.Domain;
+namespace Girteka.ElectricAggregate.Domain.Converter;
 
 public class CustomDecimalConverter : DecimalConverter
 {

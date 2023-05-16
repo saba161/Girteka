@@ -15,7 +15,6 @@ IHost host = Host.CreateDefaultBuilder(args)
         services.AddScoped<IFileArchive, FileArchive>();
         services.AddScoped<IContext<string, string, Stream>, CSVFileFromHTTTP>();
         services.AddScoped<IContext<string, string, Stream>, CSVFileFromLocalDisk>();
-        services.AddScoped<IFilesService, FilesService>();
        // services.AddTransient<IElectryCityJob, ElectryCityJob>();
         services.AddTransient<HttpClient>();
 

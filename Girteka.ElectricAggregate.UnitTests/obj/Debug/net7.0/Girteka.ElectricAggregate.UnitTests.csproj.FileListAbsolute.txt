@@ -185,3 +185,4 @@
 /Users/sabakoghuashvili/Desktop/Girteka.AggregationApp/Girteka/Girteka.ElectricAggregate.UnitTests/bin/Debug/net7.0/Moq.dll
 /Users/sabakoghuashvili/Desktop/Girteka.AggregationApp/Girteka/Girteka.ElectricAggregate.UnitTests/bin/Debug/net7.0/Girteka.ElectricAggregate.Integrations.dll
 /Users/sabakoghuashvili/Desktop/Girteka.AggregationApp/Girteka/Girteka.ElectricAggregate.UnitTests/bin/Debug/net7.0/Girteka.ElectricAggregate.Integrations.pdb
+/Users/sabakoghuashvili/Desktop/Girteka.AggregationApp/Girteka/Girteka.ElectricAggregate.UnitTests/bin/Debug/net7.0/HtmlAgilityPack.dll

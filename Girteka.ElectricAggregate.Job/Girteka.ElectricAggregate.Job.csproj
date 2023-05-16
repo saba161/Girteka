@@ -21,10 +21,4 @@
       <ProjectReference Include="..\Girteka.ElectricAggregate.Integrations\Girteka.ElectricAggregate.Integrations.csproj" />
       <ProjectReference Include="..\Girteka.ElectricAggregate.Persistence\Girteka.ElectricAggregate.Persistence.csproj" />
     </ItemGroup>
-
-    <ItemGroup>
-      <Content Include="..\.dockerignore">
-        <Link>.dockerignore</Link>
-      </Content>
-    </ItemGroup>
 </Project>
