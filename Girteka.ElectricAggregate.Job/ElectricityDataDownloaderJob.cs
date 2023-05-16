@@ -30,7 +30,7 @@ public class ElectricityDataDownloaderJob : IJob
                     new CSVFileFromLocalDisk(), 
                     new ApplicationDbContext()
                     )
-            ).Do(_csvLocalpPath, 2);
+            ).Do(_csvLocalpPath, 2); //the second parameter is the data we want to get, for example if we set it to 2 we get 2 years old data
 
             _logger.LogInformation("Job completed successfully");
         }
