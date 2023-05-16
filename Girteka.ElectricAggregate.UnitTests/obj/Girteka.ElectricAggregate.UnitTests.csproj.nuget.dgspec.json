@@ -63,7 +63,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/x64/sdk/7.0.203/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/Users/sabakoghuashvili/.dotnet/sdk/7.0.101/RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -130,7 +130,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/x64/sdk/7.0.203/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/Users/sabakoghuashvili/.dotnet/sdk/7.0.101/RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -215,7 +215,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/x64/sdk/7.0.203/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/Users/sabakoghuashvili/.dotnet/sdk/7.0.101/RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -294,7 +294,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/x64/sdk/7.0.203/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/Users/sabakoghuashvili/.dotnet/sdk/7.0.101/RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -387,7 +387,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/x64/sdk/7.0.203/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/Users/sabakoghuashvili/.dotnet/sdk/7.0.101/RuntimeIdentifierGraph.json"
         }
       }
     }
