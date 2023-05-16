@@ -8,15 +8,7 @@
 
 ## How to setup project
   - git clone https://github.com/saba161/Girteka.git
-## How to build project
-  - API: docker build
-  - Job: docker
-## How to Run Project
-  - docker-compose up
-  - docker compose
-  - api
-  - job
-  - sql database
+
 ## How to Test Project
   - path : for example "cd ./Girteka.AggregationApp/Girteka/Girteka.ElectricAggregate.UnitTests"
   - dotnet test
