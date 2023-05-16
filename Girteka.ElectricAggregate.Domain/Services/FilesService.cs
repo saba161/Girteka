@@ -8,46 +8,46 @@ namespace Girteka.ElectricAggregate.Domain.Services;
 
 public class FilesService : IFilesService
 {
-    private readonly IContext<string, Stream> _httpContext;
-    private readonly IContext<string, Stream> _localContext;
+    private readonly IContext<string, string, Stream> _httpContext;
+    private readonly IContext<string, string, Stream> _localContext;
     private readonly IDbContext _dbContext;
 
-    public FilesService(IEnumerable<IContext<string, Stream>> contexts, IDbContext dbContext)
+    public FilesService(IEnumerable<IContext<string, string, Stream>> contexts, IDbContext dbContext)
     {
         _dbContext = dbContext;
         _httpContext = contexts.First();
         _localContext = contexts.Skip(1).First();
     }
 
-    public void Execute(List<string> fileNames)
+    public void Execute(List<string> fileNames, string csvLocalPath, List<string> httpPath)
     {
         var streams = new List<Stream>();
-        foreach (var name in fileNames)
+        foreach (var uri in httpPath)
         {
-            _httpContext.Do(name);
+            _httpContext.Do(csvLocalPath, uri);
         }
 
         foreach (var names in fileNames)
         {
-            streams.Add(_localContext.Do(names));
+            streams.Add(_localContext.Do(names, csvLocalPath));
         }
 
-        var electricities = ConvertStreamToModel(streams);
-
-        var filteredData = electricities
-            .Where(x => x.Pavadinimas == "Butas")
-            .GroupBy(x => x.Tinklas)
-            .Select(s => new Electricity()
-            {
-                Tinklas = s.Key,
-                Pavadinimas = "Butas",
-                PPlus = s.Sum(x => x.PPlus),
-                PMinus = s.Sum(x => x.PMinus),
-            });
-
-        _dbContext.Electricities.AddRangeAsync(filteredData);
-
-        _dbContext.SaveChangesAsync();
+        // var electricities = ConvertStreamToModel(streams);
+        //
+        // var filteredData = electricities
+        //     .Where(x => x.Pavadinimas == "Butas")
+        //     .GroupBy(x => x.Tinklas)
+        //     .Select(s => new Electricity()
+        //     {
+        //         Tinklas = s.Key,
+        //         Pavadinimas = "Butas",
+        //         PPlus = s.Sum(x => x.PPlus),
+        //         PMinus = s.Sum(x => x.PMinus),
+        //     });
+        //
+        // _dbContext.Electricities.AddRangeAsync(filteredData);
+        //
+        // _dbContext.SaveChangesAsync();
     }
 
     private List<Electricity> ConvertStreamToModel(List<Stream> streams)

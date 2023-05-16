@@ -22,8 +22,8 @@ IHost host = Host.CreateDefaultBuilder(args)
         services.AddScoped<ILoadCsvFiles, LoadCsvFiles>();
         services.AddScoped<IDbContext, ApplicationDbContext>();
         services.AddScoped<IFileArchive, FileArchive>();
-        services.AddScoped<IContext<string, Stream>, CSVFileFromHTTTP>();
-        services.AddScoped<IContext<string, Stream>, CSVFileFromLocalDisk>();
+        services.AddScoped<IContext<string, string, Stream>, CSVFileFromHTTTP>();
+        services.AddScoped<IContext<string, string, Stream>, CSVFileFromLocalDisk>();
         services.AddScoped<IFilesService, FilesService>();
         services.AddTransient<HttpClient>();
 

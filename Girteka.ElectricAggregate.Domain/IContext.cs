@@ -1,6 +1,6 @@
 namespace Girteka.ElectricAggregate.Domain;
 
-public interface IContext<TInput, TResult>
+public interface IContext<TInput, TPath, TResult>
 {
-    public TResult Do(TInput input);
+    public TResult Do(TInput param, TPath path);
 }

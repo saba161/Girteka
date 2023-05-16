@@ -1,17 +1,12 @@
-using System.Globalization;
-using CsvHelper;
-using CsvHelper.Configuration;
 using Girteka.ElectricAggregate.Domain;
-using Girteka.ElectricAggregate.Domain.Mappers;
-using Girteka.ElectricAggregate.Domain.Models;
 
 namespace Girteka.ElectricAggregate.Integrations;
 
-public class CSVFileFromLocalDisk : IContext<string, Stream>
+public class CSVFileFromLocalDisk : IContext<string, string, Stream>
 {
-    public Stream Do(string input)
+    public Stream Do(string fileName, string path)
     {
-        string filePath = Path.Combine("/Users/sabakoghuashvili/Desktop/Temp/", input);
+        string filePath = Path.Combine(path, fileName);
 
         return File.Open(filePath, FileMode.Open);
     }
