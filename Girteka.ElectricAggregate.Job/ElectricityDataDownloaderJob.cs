@@ -1,6 +1,4 @@
-using Girteka.ElectricAggregate.Domain.DownloadCsvFiles;
 using Girteka.ElectricAggregate.Domain.Services;
-using Girteka.ElectricAggregate.Domain.TransforCsvFiles;
 using Girteka.ElectricAggregate.Integrations;
 using Girteka.ElectricAggregate.Persistence;
 using Quartz;
@@ -12,8 +10,8 @@ public class ElectricityDataDownloaderJob : IJob
     private readonly string _csvLocalpPath;
     private readonly ILogger<ElectricityDataDownloaderJob> _logger;
 
-    public ElectricityDataDownloaderJob(IConfiguration configuration, IDownloadCsvFiles donwloadCsvFiles,
-        ILoadCsvFiles loadCsvFiles, ILogger<ElectricityDataDownloaderJob> logger, IFilesService filesService)
+    public ElectricityDataDownloaderJob(IConfiguration configuration, ILogger<ElectricityDataDownloaderJob> logger,
+        IFilesService filesService)
     {
         _logger = logger;
         _csvLocalpPath = configuration.GetValue<string>("CsvLocalpPath");

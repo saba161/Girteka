@@ -1,11 +1,7 @@
 using Girteka.ElectricAggregate.Domain;
-using Girteka.ElectricAggregate.Domain.DownloadCsvFiles;
-using Girteka.ElectricAggregate.Domain.Services;
-using Girteka.ElectricAggregate.Integrations;
 using Girteka.ElectricAggregate.Persistence;
 using Girteka.ElectricAggregate.Persistence.Logger;
 using Microsoft.EntityFrameworkCore;
-using System.Net.Http;
 
 var builder = WebApplication.CreateBuilder(args);
 ConfigurationManager configuration = builder.Configuration;
@@ -14,7 +10,6 @@ ConfigurationManager configuration = builder.Configuration;
 builder.Configuration.AddJsonFile("appsettings.json", optional: true);
 builder.Services.AddScoped<IDbContext, ApplicationDbContext>();
 builder.Services.AddScoped<IElectricity, ElectricityRepository>();
-builder.Services.AddScoped<IDownloadCsvFiles, DownloadCsvFiles>();
 builder.Services.AddScoped<IFileArchive, FileArchive>();
 builder.Services.AddHttpClient(); // Register HttpClient
 

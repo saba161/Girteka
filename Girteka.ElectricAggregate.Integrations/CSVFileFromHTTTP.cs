@@ -1,5 +1,4 @@
 using Girteka.ElectricAggregate.Domain;
-using Microsoft.Extensions.Logging;
 
 namespace Girteka.ElectricAggregate.Integrations;
 
@@ -7,14 +6,14 @@ public class CSVFileFromHTTTP : IContext<string, string, Stream>
 {
     private readonly HttpClient _client;
 
-    public CSVFileFromHTTTP( HttpClient client)
+    public CSVFileFromHTTTP(HttpClient client)
     {
         _client = client;
     }
 
     public Stream Do(string localPath, string path)
     {
-        Uri uri = new Uri(path); //TODO Code is different
+        Uri uri = new Uri(path);
         var response = _client.GetAsync(uri).Result;
 
         response.EnsureSuccessStatusCode();

@@ -1,25 +1,16 @@
 using Girteka.ElectricAggregate.Domain;
-using Girteka.ElectricAggregate.Domain.DownloadCsvFiles;
-using Girteka.ElectricAggregate.Domain.Models;
 using Girteka.ElectricAggregate.Domain.Services;
-using Girteka.ElectricAggregate.Domain.TransforCsvFiles;
 using Girteka.ElectricAggregate.Integrations;
 using Girteka.ElectricAggregate.Job;
 using Girteka.ElectricAggregate.Persistence;
 using Girteka.ElectricAggregate.Persistence.Logger;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Quartz;
-using DonwloadCsvFiles = Girteka.ElectricAggregate.Domain.DownloadCsvFiles.DownloadCsvFiles;
 
 IHost host = Host.CreateDefaultBuilder(args)
     .ConfigureServices((ctx, services) =>
     {
         var connectionString = ctx.Configuration.GetConnectionString("DefaultConnection");
 
-        services.AddScoped<IDownloadCsvFiles, DonwloadCsvFiles>();
-        services.AddScoped<ILoadCsvFiles, LoadCsvFiles>();
         services.AddScoped<IDbContext, ApplicationDbContext>();
         services.AddScoped<IFileArchive, FileArchive>();
         services.AddScoped<IContext<string, string, Stream>, CSVFileFromHTTTP>();
