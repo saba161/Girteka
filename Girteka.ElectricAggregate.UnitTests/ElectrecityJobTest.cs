@@ -46,7 +46,7 @@ public class ElectrecityJobTest
         Assert.NotNull(result);
         Assert.IsInstanceOf<MemoryStream>(result);
     }
-    
+
     [Test]
     public void CSVFileFromLocalDiskTest()
     {
@@ -85,7 +85,7 @@ public class ElectrecityJobTest
             Assert.IsNotEmpty(csvFileContent);
         }
     }
-    
+
     [TearDown]
     public void Teardown()
     {
