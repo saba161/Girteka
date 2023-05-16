@@ -10,8 +10,7 @@ public class ElectricityDataDownloaderJob : IJob
     private readonly string _csvLocalpPath;
     private readonly ILogger<ElectricityDataDownloaderJob> _logger;
 
-    public ElectricityDataDownloaderJob(IConfiguration configuration, ILogger<ElectricityDataDownloaderJob> logger,
-        IFilesService filesService)
+    public ElectricityDataDownloaderJob(IConfiguration configuration, ILogger<ElectricityDataDownloaderJob> logger)
     {
         _logger = logger;
         _csvLocalpPath = configuration.GetValue<string>("CsvLocalpPath");
@@ -19,23 +18,26 @@ public class ElectricityDataDownloaderJob : IJob
 
     public async Task Execute(IJobExecutionContext context)
     {
-        var uris = new List<string>
+        try
         {
-            "https://data.gov.lt/dataset/1975/download/10766/2022-05.csv",
-            "https://data.gov.lt/dataset/1975/download/10765/2022-04.csv",
-            "https://data.gov.lt/dataset/1975/download/10764/2022-03.csv",
-            "https://data.gov.lt/dataset/1975/download/10763/2022-02.csv"
-        };
-        foreach (var uri in uris)
-        {
-            new DownloadFiles(new CSVFileFromHTTTP(new HttpClient())).Do(_csvLocalpPath,
-                uri);
-        }
+            _logger.LogInformation("Job start work");
 
-        foreach (var uri in uris)
+            new ElectryCityJob(
+                new DownloadFiles(
+                    new CSVFileFromHTTTP(new HttpClient())
+                ),
+                new StoreFiles(
+                    new CSVFileFromLocalDisk(), 
+                    new ApplicationDbContext()
+                    )
+            ).Do(_csvLocalpPath, 2);
+
+            _logger.LogInformation("Job completed successfully");
+        }
+        catch (Exception e)
         {
-            new StoreFiles(new CSVFileFromLocalDisk(), new ApplicationDbContext()).Do(_csvLocalpPath,
-                uri.Split('/').Last());
+            _logger.LogError(e.Message);
+            throw;
         }
     }
 }

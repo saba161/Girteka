@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "kf8YPXsl697vk0OQraa4rk0uIYjwUDhXHg27AC7SGlgKZtbpw3ClyQbBuQvQCCDVH/5EZm8ggZ95aAjnSKQVYg==",
+  "dgSpecHash": "Q38mNDRf6x3ITcXj2NAKNPNRLeP2UtnXs/XhTon4w4/VuQFhZ4lDFsWYjCnUcoaqdi9SVeEmI3uzngFMJukrlQ==",
   "success": true,
   "projectFilePath": "/Users/sabakoghuashvili/Desktop/Girteka.AggregationApp/Girteka/Girteka.ElectricAggregate.API/Girteka.ElectricAggregate.API.csproj",
   "expectedPackageFiles": [
     "/Users/sabakoghuashvili/.nuget/packages/azure.core/1.25.0/azure.core.1.25.0.nupkg.sha512",
     "/Users/sabakoghuashvili/.nuget/packages/azure.identity/1.7.0/azure.identity.1.7.0.nupkg.sha512",
     "/Users/sabakoghuashvili/.nuget/packages/csvhelper/30.0.1/csvhelper.30.0.1.nupkg.sha512",
+    "/Users/sabakoghuashvili/.nuget/packages/htmlagilitypack/1.11.46/htmlagilitypack.1.11.46.nupkg.sha512",
     "/Users/sabakoghuashvili/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/Users/sabakoghuashvili/.nuget/packages/microsoft.aspnetcore.openapi/7.0.1/microsoft.aspnetcore.openapi.7.0.1.nupkg.sha512",
     "/Users/sabakoghuashvili/.nuget/packages/microsoft.bcl.asyncinterfaces/1.1.1/microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",

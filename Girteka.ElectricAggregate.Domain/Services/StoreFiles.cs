@@ -20,7 +20,10 @@ public class StoreFiles : IStorage<string, Stream>
     public void Do(string param, string fileName)
     {
         var convertedFile = ConvertStreamToModel(_context.Do(fileName, param));
-        
+
+        DateTime result = DateTime.ParseExact(fileName.Substring(0, fileName.LastIndexOf(".")), "yyyy-MM",
+            CultureInfo.InvariantCulture);
+
         var filteredData = convertedFile
             .Where(x => x.Pavadinimas == "Butas")
             .GroupBy(x => x.Tinklas)
@@ -30,10 +33,11 @@ public class StoreFiles : IStorage<string, Stream>
                 Pavadinimas = "Butas",
                 PPlus = s.Sum(x => x.PPlus),
                 PMinus = s.Sum(x => x.PMinus),
+                PlT = result
             });
-        
+
         _dbContext.Electricities.AddRangeAsync(filteredData);
-        
+
         _dbContext.SaveChangesAsync();
     }
 

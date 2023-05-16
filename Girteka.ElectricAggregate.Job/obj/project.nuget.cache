@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "DNkJHiDUH80zPKWCx/DYDahspFTHFI9BrhZeMjNX+b/XGJbseJ982FpXXyI+awTOx8AwjgY84K5ZdpfMhq6PMA==",
+  "dgSpecHash": "tcZG9237Y3wIZKzCcr0Ej539Ii4nIS53nB9y8ItPgMPGib9ea+fIpxKxRm3acEfEIUa/1esBKgbaMwohKhfz+A==",
   "success": true,
   "projectFilePath": "/Users/sabakoghuashvili/Desktop/Girteka.AggregationApp/Girteka/Girteka.ElectricAggregate.Job/Girteka.ElectricAggregate.Job.csproj",
   "expectedPackageFiles": [
     "/Users/sabakoghuashvili/.nuget/packages/azure.core/1.25.0/azure.core.1.25.0.nupkg.sha512",
     "/Users/sabakoghuashvili/.nuget/packages/azure.identity/1.7.0/azure.identity.1.7.0.nupkg.sha512",
     "/Users/sabakoghuashvili/.nuget/packages/csvhelper/30.0.1/csvhelper.30.0.1.nupkg.sha512",
+    "/Users/sabakoghuashvili/.nuget/packages/htmlagilitypack/1.11.46/htmlagilitypack.1.11.46.nupkg.sha512",
     "/Users/sabakoghuashvili/.nuget/packages/microsoft.bcl.asyncinterfaces/1.1.1/microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "/Users/sabakoghuashvili/.nuget/packages/microsoft.csharp/4.5.0/microsoft.csharp.4.5.0.nupkg.sha512",
     "/Users/sabakoghuashvili/.nuget/packages/microsoft.data.sqlclient/5.1.0/microsoft.data.sqlclient.5.1.0.nupkg.sha512",

@@ -94,3 +94,4 @@
 /Users/sabakoghuashvili/Desktop/Girteka.AggregationApp/Girteka/Girteka.ElectricAggregate.Job/bin/Debug/net7.0/Girteka.ElectricAggregate.Persistence.pdb
 /Users/sabakoghuashvili/Desktop/Girteka.AggregationApp/Girteka/Girteka.ElectricAggregate.Job/bin/Debug/net7.0/Girteka.ElectricAggregate.Integrations.dll
 /Users/sabakoghuashvili/Desktop/Girteka.AggregationApp/Girteka/Girteka.ElectricAggregate.Job/bin/Debug/net7.0/Girteka.ElectricAggregate.Integrations.pdb
+/Users/sabakoghuashvili/Desktop/Girteka.AggregationApp/Girteka/Girteka.ElectricAggregate.Job/bin/Debug/net7.0/HtmlAgilityPack.dll

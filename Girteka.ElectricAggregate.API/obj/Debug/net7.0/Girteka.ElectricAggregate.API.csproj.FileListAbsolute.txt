@@ -93,3 +93,4 @@
 /Users/sabakoghuashvili/Desktop/Girteka.AggregationApp/Girteka/Girteka.ElectricAggregate.API/bin/Debug/net7.0/runtimes/browser/lib/net7.0/System.Text.Encodings.Web.dll
 /Users/sabakoghuashvili/Desktop/Girteka.AggregationApp/Girteka/Girteka.ElectricAggregate.API/bin/Debug/net7.0/Girteka.ElectricAggregate.Integrations.dll
 /Users/sabakoghuashvili/Desktop/Girteka.AggregationApp/Girteka/Girteka.ElectricAggregate.API/bin/Debug/net7.0/Girteka.ElectricAggregate.Integrations.pdb
+/Users/sabakoghuashvili/Desktop/Girteka.AggregationApp/Girteka/Girteka.ElectricAggregate.API/bin/Debug/net7.0/HtmlAgilityPack.dll

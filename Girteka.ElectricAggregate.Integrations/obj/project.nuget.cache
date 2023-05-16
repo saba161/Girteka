@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "o9BEhrEX2O3THABAdjmOuWvs9DyVfmVlsRFr/506e8TubNoD8glf3WWhaMcRSCvxnsdN6J5zb7vUPYLHZX8iGg==",
+  "dgSpecHash": "ptRmQ0vdMtyiNFUPAAgGbOBwTXcjE0AVh0ixbZL2+NPyBywBOz3/f7YOFW5MYLj+LC03YbRw3dtjPb0nenCCOg==",
   "success": true,
   "projectFilePath": "/Users/sabakoghuashvili/Desktop/Girteka.AggregationApp/Girteka/Girteka.ElectricAggregate.Integrations/Girteka.ElectricAggregate.Integrations.csproj",
   "expectedPackageFiles": [
     "/Users/sabakoghuashvili/.nuget/packages/csvhelper/30.0.1/csvhelper.30.0.1.nupkg.sha512",
+    "/Users/sabakoghuashvili/.nuget/packages/htmlagilitypack/1.11.46/htmlagilitypack.1.11.46.nupkg.sha512",
     "/Users/sabakoghuashvili/.nuget/packages/microsoft.entityframeworkcore/8.0.0-preview.3.23174.2/microsoft.entityframeworkcore.8.0.0-preview.3.23174.2.nupkg.sha512",
     "/Users/sabakoghuashvili/.nuget/packages/microsoft.entityframeworkcore.abstractions/8.0.0-preview.3.23174.2/microsoft.entityframeworkcore.abstractions.8.0.0-preview.3.23174.2.nupkg.sha512",
     "/Users/sabakoghuashvili/.nuget/packages/microsoft.entityframeworkcore.analyzers/8.0.0-preview.3.23174.2/microsoft.entityframeworkcore.analyzers.8.0.0-preview.3.23174.2.nupkg.sha512",
